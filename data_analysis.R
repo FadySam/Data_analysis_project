@@ -19,37 +19,45 @@ str(df)
 
 ####Year colunm 
 # Find missing values in Time
-missing_values <- is.na(my_data$Year)
+missing_values <- is.na(df$Year)
 print(sum(missing_values))
 
 
 ####Time colunm 
 # Find missing values in Time
-missing_values <- is.na(my_data$Time)
+missing_values <- is.na(df$Time)
 num_missing <- sum(missing_values)
 result <-  num_missing
 print(result)
 
 
 ## get summary
-summary(my_data$fleet_start)
+summary(df$fleet_start)
 
 ##fleet_start colunm
 # Find missing values in fleet_start
-missing_values <- is.na(my_data$fleet_start)
+missing_values <- is.na(df$fleet_start)
 num_missing <- sum(missing_values)
 result <- num_missing
 print(result)
 
 ## get summary
-summary(my_data$fleet_start)
+summary(df$fleet_start)
 
 # fleet finish
 # Find missing values in fleet_finish
-missing_values <- is.na(my_data$fleet_finish)
+missing_values <- is.na(df$fleet_finish)
 num_missing <- sum(missing_values)
 result <- num_missing
 print(result)
 
 ## get summary
 summary(my_data$fleet_finish)
+
+
+
+####### visulize 
+draw_sc <- ggplot(df, aes(Time, Year))
+draw_sc + geom_point(aes(color=Region)) + labs(x="Time
+Index", y="Year")
+draw_sc + geom_point(aes(color=Region)) + stat_smooth(se=FALSE)
